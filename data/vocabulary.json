@@ -333,8 +333,8 @@
                     "article": "die",
                     "word": "Bank",
                     "plural": "-en",
-                    "russian": "скамейка",
-                    "ukrainian": "лава",
+                    "russian": "Скамейка",
+                    "ukrainian": "Лава",
                     "english": "bench"
                 },
                 {
@@ -357,24 +357,24 @@
                     "article": "das",
                     "word": "Hotel",
                     "plural": "-s",
-                    "russian": "отель",
-                    "ukrainian": "готель",
+                    "russian": "Отель",
+                    "ukrainian": "Готель",
                     "english": "hotel"
                 },
                 {
                     "article": "die",
                     "word": "Polizei",
                     "plural": "",
-                    "russian": "полиция",
-                    "ukrainian": "поліція",
+                    "russian": "Полиция",
+                    "ukrainian": "Поліція",
                     "english": "police"
                 },
                 {
                     "article": "die",
                     "word": "Post",
                     "plural": "",
-                    "russian": "почта",
-                    "ukrainian": "допис",
+                    "russian": "Почта",
+                    "ukrainian": "Допис",
                     "english": "post"
                 },
                 {
@@ -389,8 +389,8 @@
                     "article": "der",
                     "word": "Stadtplan",
                     "plural": "⸚e",
-                    "russian": "карта",
-                    "ukrainian": "карта",
+                    "russian": "Карта",
+                    "ukrainian": "Карта",
                     "english": "map"
                 }
             ],
@@ -413,8 +413,8 @@
                     "article": "der",
                     "word": "Meter",
                     "plural": "-",
-                    "russian": "метр",
-                    "ukrainian": "метр",
+                    "russian": "Метр",
+                    "ukrainian": "Метр",
                     "english": "meter"
                 },
                 {

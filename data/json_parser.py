@@ -99,7 +99,7 @@ if __name__ == "__main__":
 
 	with open("data/temp_file.txt", "r", encoding="utf-8") as file:
 		lines = file.readlines()
-		result = existing_data  # start from existing data
+		result = existing_data
 
 		index = 0
 		theme = ""
@@ -123,14 +123,11 @@ if __name__ == "__main__":
 						"misc": [],
 					}
 			elif line.strip():
-				# Determine part of speech flag
 				flag = line[-2]
 				entry_text = line[:-3]
 
-				# Prepare new data dict based on part of speech
 				if flag == "n":
 					new_data = get_noun_data(entry_text)
-					# Find existing entry in nouns list by word
 					nouns = result[theme][subtheme]["noun"]
 					existing = next((item for item in nouns if item["word"] == new_data["word"]), None)
 					if existing:

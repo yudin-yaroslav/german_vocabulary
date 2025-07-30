@@ -75,32 +75,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function refillEmptyFromNotLearnt() {
     const current = document.querySelector(".pile.current");
+    const notLearnt = document.querySelector(".pile.not-learnt");
+    const cards = Array.from(notLearnt.querySelectorAll(".card")).reverse();
 
-    if (current.querySelectorAll(".card").length === 0) {
-        const current = document.querySelector(".pile.current");
-        const notLearnt = document.querySelector(".pile.not-learnt");
-        const cards = Array.from(notLearnt.querySelectorAll(".card")).reverse();
+    if (cards.length === 0) return;
 
-        if (cards.length === 0) return;
+    function animateNext() {
+        const card = cards.shift();
+        if (!card) return;
 
-        function animateNext() {
-            const card = cards.shift();
-            if (!card) return;
-
-            animateCardMovement(card, current, refillEmptyFromNotLearnt, true);
-            animateNext();
-        }
-
+        animateCardMovement(card, current, refillEmptyFromNotLearnt, true);
         animateNext();
     }
+
+    animateNext();
 }
 
 function moveKnownCard() {
-    moveCardTo(".pile.learnt", refillEmptyFromNotLearnt);
+    moveCardTo(
+        ".pile.learnt",
+        () => {
+            const current = document.querySelector(".pile.current");
+            if (current.querySelectorAll(".card").length === 0) {
+                refillEmptyFromNotLearnt();
+            }
+        },
+        true
+    );
 }
 
 function moveUnknownCard() {
-    moveCardTo(".pile.not-learnt", refillEmptyFromNotLearnt);
+    moveCardTo(
+        ".pile.not-learnt",
+        () => {
+            const current = document.querySelector(".pile.current");
+            if (current.querySelectorAll(".card").length === 0) {
+                refillEmptyFromNotLearnt();
+            }
+        },
+        true
+    );
 }
 
 document.getElementById("know").addEventListener("click", moveKnownCard);

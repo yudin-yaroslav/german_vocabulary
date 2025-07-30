@@ -1,7 +1,7 @@
 import {
     renderCards,
     moveCardTo,
-    switchEndStartCars,
+    switchEndStartCards,
 } from "./lernkarten-utils.js";
 import { base } from "./base.js";
 
@@ -78,9 +78,16 @@ function moveArticleCard(target) {
     if (!correct) return;
 
     if (correct.textContent === target) {
-        moveCardTo(".pile." + target);
+        moveCardTo(
+            ".pile." + target,
+            () => {
+                const targetSelector = document.querySelector("." + target);
+                targetSelector.lastChild.classList.toggle("flipped");
+            },
+            true
+        );
     } else {
-        switchEndStartCars();
+        switchEndStartCards();
     }
 }
 

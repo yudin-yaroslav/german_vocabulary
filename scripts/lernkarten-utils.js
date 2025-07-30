@@ -1,10 +1,9 @@
-import { base } from "./base.js";
-
 async function fetchImageUrl(theme) {
-    const apiKey = import.meta.env.VITE_PIXABAY_API_KEY;
-    const url = `https://pixabay.com/api/?key=${apiKey}&q=${encodeURIComponent(theme)}&image_type=photo&per_page=3`;
-
     try {
+        const apiKey = import.meta.env.VITE_PIXABAY_API_KEY;
+
+        const url = `https://pixabay.com/api/?key=${apiKey}&q=${encodeURIComponent(theme)}&image_type=photo&per_page=3`;
+
         const response = await fetch(url);
         if (!response.ok) throw new Error("API request failed");
         const data = await response.json();
@@ -15,7 +14,7 @@ async function fetchImageUrl(theme) {
             return null;
         }
     } catch (err) {
-        console.error(err);
+        console.warn(err);
         return null;
     }
 }
@@ -28,12 +27,7 @@ function reorderPile(pile) {
     });
 }
 
-export function animateCardMovement(
-    card,
-    targetPile,
-    callback = null,
-    is_front = true
-) {
+export function animateCardMovement(card, targetPile, callback, is_front) {
     const cardRect = card.getBoundingClientRect();
     const targetRect = targetPile.getBoundingClientRect();
 
@@ -79,7 +73,11 @@ export function animateCardMovement(
 
     anim.onfinish = () => {
         document.body.removeChild(clone);
-        targetPile.insertBefore(card, targetPile.firstChild);
+        if (is_front) {
+            targetPile.appendChild(card);
+        } else {
+            targetPile.insertBefore(card, targetPile.firstChild);
+        }
 
         card.classList.remove("flipped");
 
@@ -89,9 +87,10 @@ export function animateCardMovement(
         const current = document.querySelector(".pile.current");
         if (current) {
             reorderPile(current);
-            if (callback) {
-                callback();
-            }
+        }
+
+        if (callback) {
+            callback();
         }
     };
 }
@@ -121,8 +120,6 @@ async function createCard(front, back, article, imageName) {
 
             imgDiv.appendChild(img);
             backDiv.appendChild(imgDiv);
-        } else {
-            console.log(imageUrl);
         }
     }
 
@@ -154,12 +151,7 @@ export async function renderCards(cardData) {
     reorderPile(currentPile);
 }
 
-function moveCardFromTo(
-    sourceSelector,
-    targetSelector,
-    callback = null,
-    is_front = true
-) {
+function moveCardFromTo(sourceSelector, targetSelector, callback, is_front) {
     const source = document.querySelector(sourceSelector);
     if (!source) return;
 
@@ -170,16 +162,16 @@ function moveCardFromTo(
     animateCardMovement(card, target, callback, is_front);
 }
 
-export function moveCardTo(targetSelector, callback = null, is_front = true) {
+export function moveCardTo(targetSelector, callback, is_front) {
     moveCardFromTo(".pile.current", targetSelector, callback, is_front);
 }
 
-export function switchEndStartCars() {
+export function switchEndStartCards() {
     function switchCallback() {
         moveCardFromTo(".pile.empty", ".pile.current", null, false);
     }
 
-    moveCardFromTo(".pile.current", ".pile.empty", switchCallback);
+    moveCardFromTo(".pile.current", ".pile.empty", switchCallback, true);
 }
 
 const piles = document.querySelectorAll(".pile");
