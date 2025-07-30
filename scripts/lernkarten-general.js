@@ -2,7 +2,8 @@ import {
     renderCards,
     moveCardTo,
     animateCardMovement,
-} from "lernkarten-utils.js";
+} from "./lernkarten-utils.js";
+import { base } from "./base.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const raw = localStorage.getItem("selectedSubthemes");
@@ -19,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    fetch("data/vocabulary.json")
+    fetch(base + "data/vocabulary.json")
         .then((response) => {
             if (!response.ok) {
                 throw new Error(

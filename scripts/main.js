@@ -1,5 +1,7 @@
+import { base } from "./base.js";
+
 document.addEventListener("DOMContentLoaded", () => {
-    fetchData("../data/vocabulary.json")
+    fetchData(base + "data/vocabulary.json")
         .then(initPage)
         .catch((error) => console.error("Fetch or parsing error:", error));
 });
