@@ -1,0 +1,79 @@
+-- Hallo! Ich bin Nicole ...
+
+- Bergüßung und Abschied
+Hallo p
+Guten Morgen p
+Guten Tag p
+Guten Abend p
+Gute Nacht p
+Auf Wiedersehen p
+Tschüs p
+
+- Name
+Ich heiße / Ich bin ... p
+Mein Name ist ... p
+Das ist ... p
+Wer ...? p
+Wie ...? p
+
+- Personalien
+die Frau, -en n
+der Herr, -en n
+der Name, -n n
+der Vorname, -n n
+der Familienname, -n
+
+- Herkunft
+Woher ...? p
+kommen aus v
+aus ... m
+
+- Länder
+das Land, ⸚er n
+Deutschland n
+Österreich n
+die Schweiz n
+
+- Befinden
+Wie geht's? p
+sehr gut a
+gut a
+es geht a
+nicht so gut a
+
+- Weitere wichtige Wörter
+das Alphabet, -e n
+buchstabieren v
+auch a
+danke p
+ja p
+sehr a
+und m
+
+-- Wir suchen das Hotel Maritim
+
+- In der Stadt
+die Ampel, -n n
+die Bank, -en n
+die Brücke, -n n
+der Dom, -e n
+das Hotel, -s n
+die Mitte, -n n
+der Stadtplan, ⸚e n
+die Polizei n
+die Post n
+das Stadtzentrum n
+
+- Wegbeschreibung
+der Kilometer, - n
+der Meter, - n
+die Nähe n
+der Weg n
+biegen ab v
+beschreiben v
+fahren weiter v
+wenden, v
+fahren zurück v
+fremd m
+links m
+rechts m
