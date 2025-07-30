@@ -5,11 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
     headerLeft.className = "header-left";
 
     const homeLink = document.createElement("a");
-    homeLink.href = "index.html";
+    homeLink.href = "./index.html";
 
     const homeImg = document.createElement("img");
     homeImg.className = "header-icon";
-    homeImg.src = "images/home.svg";
+    homeImg.src = "./images/home.svg";
     homeImg.alt = "home";
 
     homeLink.appendChild(homeImg);
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const headerName = document.createElement("a");
     headerName.className = "header-name";
-    headerName.href = "index.html";
+    headerName.href = "./index.html";
     headerName.textContent = "Deutsch Wörterbuch";
 
     const headerCenter = document.createElement("div");

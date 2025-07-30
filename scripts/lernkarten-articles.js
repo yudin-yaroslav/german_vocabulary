@@ -2,7 +2,7 @@ import {
     renderCards,
     moveCardTo,
     switchEndStartCars,
-} from "./lernkarten-utils.js";
+} from "lernkarten-utils.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const raw = localStorage.getItem("selectedSubthemes");
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    fetch("../data/vocabulary.json")
+    fetch("data/vocabulary.json")
         .then((response) => {
             if (!response.ok) {
                 throw new Error(
