@@ -4,34 +4,24 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Themes & Subthemes</title>
         <link rel="stylesheet" href="styles/styles.css" />
-        <title>Deutsch Wörterbuch</title>
     </head>
 
     <body>
         <script src="scripts/header.js"></script>
 
-        <main>
-            <div class="main-btn-grid">
-                <button
-                    class="main-btn"
-                    onclick="location.href='lernkarten.html'"
-                >
-                    Lernkarten
+        <div id="themes-container"></div>
+
+        <div class="themes-btn-wrapper">
+            <div class="themes-btn-grid">
+                <button class="main-btn" id="general-selected">
+                    allgemein
                 </button>
-                <button
-                    class="main-btn"
-                    onclick="location.href='lernkarten.html'"
-                >
-                    Lernkarten
-                </button>
-                <button
-                    class="main-btn"
-                    onclick="location.href='lernkarten.html'"
-                >
-                    Lernkarten
-                </button>
+                <button class="main-btn" id="articles-selected">Artikel</button>
             </div>
-        </main>
+        </div>
+
+        <script src="scripts/main.js"></script>
     </body>
 </html>

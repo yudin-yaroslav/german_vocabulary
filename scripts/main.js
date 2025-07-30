@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
 
             document
-                .getElementById("show-selected")
+                .getElementById("general-selected")
                 .addEventListener("click", () => {
                     const selected = Array.from(
                         document.querySelectorAll(".subtheme-checkbox")
@@ -95,17 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         JSON.stringify(selected)
                     );
 
-                    window.location.href = "test-lernkarten.html";
-                });
-
-            document
-                .getElementById("reset-selected")
-                .addEventListener("click", () => {
-                    document
-                        .querySelectorAll(".theme-checkbox, .subtheme-checkbox")
-                        .forEach((cb) => (cb.checked = false));
-
-                    document.getElementById("output").textContent = "";
+                    window.location.href = "lernkarten-general.html";
                 });
 
             document.body.style.backgroundColor =

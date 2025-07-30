@@ -20,18 +20,18 @@ document.addEventListener("DOMContentLoaded", () => {
     headerName.href = "index.html";
     headerName.textContent = "Deutsch Wörterbuch";
 
-    headerLeft.appendChild(headerName);
-
     const headerCenter = document.createElement("div");
     headerCenter.className = "header-center";
 
-    for (let i = 0; i < 3; i++) {
-        const subLink = document.createElement("a");
-        subLink.className = "header-subname";
-        subLink.href = "lernkarten.html";
-        subLink.textContent = "Lernkarten";
-        headerCenter.appendChild(subLink);
-    }
+    headerCenter.appendChild(headerName);
+
+    // for (let i = 0; i < 3; i++) {
+    //     const subLink = document.createElement("a");
+    //     subLink.className = "header-subname";
+    //     subLink.href = "lernkarten.html";
+    //     subLink.textContent = "Lernkarten";
+    //     headerCenter.appendChild(subLink);
+    // }
 
     header.appendChild(headerLeft);
     header.appendChild(headerCenter);

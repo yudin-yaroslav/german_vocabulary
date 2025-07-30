@@ -1,0 +1,49 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Themes & Subthemes</title>
+        <link rel="stylesheet" href="styles/styles.css" />
+    </head>
+
+    <body>
+        <script src="scripts/header.js"></script>
+
+        <main class="piles-wrapper">
+            <div class="pile-top">
+                <div class="pile not-learnt">
+                    <div class="pile-label">Not learnt</div>
+                </div>
+                <div class="pile learnt">
+                    <div class="pile-label">Learnt</div>
+                </div>
+            </div>
+
+            <div class="pile current"></div>
+
+            <div class="pile-btn-wrapper">
+                <button class="pile-btn" id="dont-know">
+                    <img
+                        src="images/cross.png"
+                        alt="don't know"
+                        class="pile-icon"
+                    />
+                    I don't know
+                </button>
+                <button class="pile-btn" id="know">
+                    <img
+                        src="images/checkmark.png"
+                        alt="know"
+                        class="pile-icon"
+                    />
+                    I know
+                </button>
+            </div>
+        </main>
+
+        <script src="scripts/lernkarten-movement.js"></script>
+        <script type="module" src="scripts/lernkarten-general.js"></script>
+    </body>
+</html>
