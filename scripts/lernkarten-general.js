@@ -1,4 +1,8 @@
-import { renderCards, moveCard } from "./lernkarten-utils.js";
+import {
+    renderCards,
+    moveCardTo,
+    animateCardMovement,
+} from "./lernkarten-utils.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const raw = localStorage.getItem("selectedSubthemes");
@@ -53,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             cards.push({
                                 front: article + entry.word,
                                 back: entry.russian,
+                                article: entry.article,
                                 imageName: cat === "noun" ? entry.english : "",
                             });
                         }
@@ -67,12 +72,34 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 });
 
+function refillEmptyFromNotLearnt() {
+    const current = document.querySelector(".pile.current");
+
+    if (current.querySelectorAll(".card").length === 0) {
+        const current = document.querySelector(".pile.current");
+        const notLearnt = document.querySelector(".pile.not-learnt");
+        const cards = Array.from(notLearnt.querySelectorAll(".card")).reverse();
+
+        if (cards.length === 0) return;
+
+        function animateNext() {
+            const card = cards.shift();
+            if (!card) return;
+
+            animateCardMovement(card, current, refillEmptyFromNotLearnt, true);
+            animateNext();
+        }
+
+        animateNext();
+    }
+}
+
 function moveKnownCard() {
-    moveCard(".pile.learnt");
+    moveCardTo(".pile.learnt", refillEmptyFromNotLearnt);
 }
 
 function moveUnknownCard() {
-    moveCard(".pile.not-learnt");
+    moveCardTo(".pile.not-learnt", refillEmptyFromNotLearnt);
 }
 
 document.getElementById("know").addEventListener("click", moveKnownCard);

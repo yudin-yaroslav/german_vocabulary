@@ -1,12 +1,37 @@
+async function fetchImageUrl(theme) {
+    const apiKey = import.meta.env.VITE_PIXABAY_API_KEY;
+    const url = `https://pixabay.com/api/?key=${apiKey}&q=${encodeURIComponent(theme)}&image_type=photo&per_page=3`;
+
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error("API request failed");
+        const data = await response.json();
+        if (data.hits && data.hits.length > 0) {
+            const firstImage = data.hits[0];
+            return firstImage.webformatURL;
+        } else {
+            return null;
+        }
+    } catch (err) {
+        console.error(err);
+        return null;
+    }
+}
+
 function reorderPile(pile) {
     const cards = Array.from(pile.querySelectorAll(".card"));
     cards.forEach((card, i) => {
-        card.style.zIndex = i;
+        card.style.zIndex = i + 1;
         card.style.top = -6 * i + "px";
     });
 }
 
-function animateCardMovement(card, targetPile) {
+export function animateCardMovement(
+    card,
+    targetPile,
+    callback = null,
+    is_front = true
+) {
     const cardRect = card.getBoundingClientRect();
     const targetRect = targetPile.getBoundingClientRect();
 
@@ -17,10 +42,12 @@ function animateCardMovement(card, targetPile) {
     clone.style.width = `${cardRect.width}px`;
     clone.style.height = `${cardRect.height}px`;
     clone.style.margin = "0";
-    clone.style.zIndex = "1000";
+    clone.style.zIndex = is_front ? "1000" : "-1";
     document.body.appendChild(clone);
 
-    const targetTopOffset = -6 * targetPile.querySelectorAll(".card").length;
+    const targetTopOffset = is_front
+        ? -6 * targetPile.querySelectorAll(".card").length
+        : 0;
 
     card.style.visibility = "hidden";
 
@@ -50,7 +77,7 @@ function animateCardMovement(card, targetPile) {
 
     anim.onfinish = () => {
         document.body.removeChild(clone);
-        targetPile.appendChild(card);
+        targetPile.insertBefore(card, targetPile.firstChild);
 
         card.classList.remove("flipped");
 
@@ -60,54 +87,14 @@ function animateCardMovement(card, targetPile) {
         const current = document.querySelector(".pile.current");
         if (current) {
             reorderPile(current);
-            if (current.querySelectorAll(".card").length === 0) {
-                if (document.querySelector(".pile.not-learnt") !== null) {
-                    refillFromNotLearnt();
-                }
+            if (callback) {
+                callback();
             }
         }
     };
 }
 
-function refillFromNotLearnt() {
-    const current = document.querySelector(".pile.current");
-    const notLearnt = document.querySelector(".pile.not-learnt");
-    const cards = Array.from(notLearnt.querySelectorAll(".card")).reverse();
-
-    if (cards.length === 0) return;
-
-    function animateNext() {
-        const card = cards.shift();
-        if (!card) return;
-
-        animateCardMovement(card, current);
-        animateNext();
-    }
-
-    animateNext();
-}
-
-async function fetchImageUrl(theme) {
-    const apiKey = import.meta.env.VITE_PIXABAY_API_KEY;
-    const url = `https://pixabay.com/api/?key=${apiKey}&q=${encodeURIComponent(theme)}&image_type=photo&per_page=3`;
-
-    try {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error("API request failed");
-        const data = await response.json();
-        if (data.hits && data.hits.length > 0) {
-            const firstImage = data.hits[0];
-            return firstImage.webformatURL;
-        } else {
-            return null;
-        }
-    } catch (err) {
-        console.error(err);
-        return null;
-    }
-}
-
-async function createCard(front, back, imageName) {
+async function createCard(front, back, article, imageName) {
     const card = document.createElement("div");
     card.className = "card";
 
@@ -137,6 +124,11 @@ async function createCard(front, back, imageName) {
         }
     }
 
+    const hiddenArticle = document.createElement("div");
+    hiddenArticle.className = "hidden-article";
+    hiddenArticle.textContent = article;
+
+    card.appendChild(hiddenArticle);
     card.appendChild(frontDiv);
     card.appendChild(backDiv);
 
@@ -152,27 +144,40 @@ export async function renderCards(cardData) {
 
     currentPile.innerHTML = "";
 
-    for (const { front, back, imageName } of cardData.reverse()) {
-        const card = await createCard(front, back, imageName);
+    for (const { front, back, article, imageName } of cardData.reverse()) {
+        const card = await createCard(front, back, article, imageName);
         currentPile.appendChild(card);
     }
 
     reorderPile(currentPile);
 }
 
-export function moveCard(targetSelector) {
-    const current = document.querySelector(".pile.current");
-    if (!current) return;
+function moveCardFromTo(
+    sourceSelector,
+    targetSelector,
+    callback = null,
+    is_front = true
+) {
+    const source = document.querySelector(sourceSelector);
+    if (!source) return;
 
-    const card = current.querySelector(".card:last-child");
-    if (!card) {
-        return false;
-    }
+    const card = source.querySelector(".card:last-child");
+    if (!card) return;
 
     const target = document.querySelector(targetSelector);
-    animateCardMovement(card, target);
+    animateCardMovement(card, target, callback, is_front);
+}
 
-    return true;
+export function moveCardTo(targetSelector, callback = null, is_front = true) {
+    moveCardFromTo(".pile.current", targetSelector, callback, is_front);
+}
+
+export function switchEndStartCars() {
+    function switchCallback() {
+        moveCardFromTo(".pile.empty", ".pile.current", null, false);
+    }
+
+    moveCardFromTo(".pile.current", ".pile.empty", switchCallback);
 }
 
 const piles = document.querySelectorAll(".pile");

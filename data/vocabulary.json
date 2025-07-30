@@ -363,14 +363,6 @@
                 },
                 {
                     "article": "die",
-                    "word": "Mitte",
-                    "plural": "-n",
-                    "russian": "центр",
-                    "ukrainian": "центр",
-                    "english": "center"
-                },
-                {
-                    "article": "die",
                     "word": "Polizei",
                     "plural": "",
                     "russian": "полиция",
@@ -544,4 +536,3 @@
         }
     }
 }
-
