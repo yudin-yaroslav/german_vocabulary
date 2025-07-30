@@ -229,3 +229,13 @@ main {
     object-fit: contain;
     display: block;
 }
+
+.der {
+    color: blue;
+}
+.die {
+    color: red;
+}
+.das {
+    color: green;
+}

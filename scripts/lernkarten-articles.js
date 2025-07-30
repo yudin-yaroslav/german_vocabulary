@@ -67,6 +67,24 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 });
 
+function refillFromNotLearnt() {
+    const current = document.querySelector(".pile.current");
+    const notLearnt = document.querySelector(".pile.not-learnt");
+    const cards = Array.from(notLearnt.querySelectorAll(".card")).reverse();
+
+    if (cards.length === 0) return;
+
+    function animateNext() {
+        const card = cards.shift();
+        if (!card) return;
+
+        animateCardMovement(card, current);
+        animateNext();
+    }
+
+    animateNext();
+}
+
 function moveKnownCard() {
     moveCard(".pile.learnt");
 }

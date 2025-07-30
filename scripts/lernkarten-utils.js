@@ -6,9 +6,6 @@ function reorderPile(pile) {
     });
 }
 
-const piles = document.querySelectorAll(".pile");
-piles.forEach(reorderPile);
-
 function animateCardMovement(card, targetPile) {
     const cardRect = card.getBoundingClientRect();
     const targetRect = targetPile.getBoundingClientRect();
@@ -64,7 +61,9 @@ function animateCardMovement(card, targetPile) {
         if (current) {
             reorderPile(current);
             if (current.querySelectorAll(".card").length === 0) {
-                refillFromNotLearnt();
+                if (document.querySelector(".pile.not-learnt") !== null) {
+                    refillFromNotLearnt();
+                }
             }
         }
     };
@@ -88,30 +87,96 @@ function refillFromNotLearnt() {
     animateNext();
 }
 
-function moveCard(targetSelector) {
+async function fetchImageUrl(theme) {
+    const apiKey = import.meta.env.VITE_PIXABAY_API_KEY;
+    const url = `https://pixabay.com/api/?key=${apiKey}&q=${encodeURIComponent(theme)}&image_type=photo&per_page=3`;
+
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error("API request failed");
+        const data = await response.json();
+        if (data.hits && data.hits.length > 0) {
+            const firstImage = data.hits[0];
+            return firstImage.webformatURL;
+        } else {
+            return null;
+        }
+    } catch (err) {
+        console.error(err);
+        return null;
+    }
+}
+
+async function createCard(front, back, imageName) {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    const frontDiv = document.createElement("div");
+    frontDiv.className = "card-front card-content";
+    frontDiv.textContent = front;
+
+    const backDiv = document.createElement("div");
+    backDiv.className = "card-back card-content";
+    backDiv.textContent = back;
+
+    if (imageName) {
+        const imageUrl = await fetchImageUrl(imageName);
+        if (imageUrl) {
+            const imgDiv = document.createElement("div");
+            imgDiv.className = "card-image-div";
+
+            const img = document.createElement("img");
+            img.className = "card-image";
+            img.src = imageUrl;
+            img.alt = front;
+
+            imgDiv.appendChild(img);
+            backDiv.appendChild(imgDiv);
+        } else {
+            console.log(imageUrl);
+        }
+    }
+
+    card.appendChild(frontDiv);
+    card.appendChild(backDiv);
+
+    return card;
+}
+
+export async function renderCards(cardData) {
+    const currentPile = document.querySelector(".pile.current");
+    if (!currentPile) {
+        console.error("No .pile.current container found");
+        return;
+    }
+
+    currentPile.innerHTML = "";
+
+    for (const { front, back, imageName } of cardData.reverse()) {
+        const card = await createCard(front, back, imageName);
+        currentPile.appendChild(card);
+    }
+
+    reorderPile(currentPile);
+}
+
+export function moveCard(targetSelector) {
     const current = document.querySelector(".pile.current");
     if (!current) return;
 
     const card = current.querySelector(".card:last-child");
     if (!card) {
-        refillFromNotLearnt();
-        return;
+        return false;
     }
 
     const target = document.querySelector(targetSelector);
     animateCardMovement(card, target);
+
+    return true;
 }
 
-function moveKnownCard() {
-    moveCard(".pile.learnt");
-}
-
-function moveUnknownCard() {
-    moveCard(".pile.not-learnt");
-}
-
-document.getElementById("know").addEventListener("click", moveKnownCard);
-document.getElementById("dont-know").addEventListener("click", moveUnknownCard);
+const piles = document.querySelectorAll(".pile");
+piles.forEach(reorderPile);
 
 document.querySelectorAll(".pile").forEach((pile) => {
     pile.addEventListener("click", (e) => {
