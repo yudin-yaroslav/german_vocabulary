@@ -1,6 +1,7 @@
 async function fetchImageUrl(theme) {
     try {
-        const apiKey = import.meta.env.VITE_PIXABAY_API_KEY;
+        const apiKey = import.meta.env?.VITE_PIXABAY_API_KEY;
+        if (!apiKey) return null;
 
         const url = `https://pixabay.com/api/?key=${apiKey}&q=${encodeURIComponent(theme)}&image_type=photo&per_page=3`;
 
