@@ -50,19 +50,8 @@ ja p
 sehr a
 und m
 
--- Wir suchen das Hotel Maritim
 
-- In der Stadt
-die Ampel, -n n
-die Bank, -en n
-die Brücke, -n n
-der Dom, -e n
-das Hotel, -s n
-die Mitte, -n n
-der Stadtplan, ⸚e n
-die Polizei n
-die Post n
-das Stadtzentrum n
+-- Wir suchen das Hotel Maritim
 
 - Wegbeschreibung
 der Kilometer, - n
@@ -77,3 +66,182 @@ fahren zurück v
 fremd m
 links m
 rechts m
+
+- Sich entschuldigen und danken
+Ach so. p
+Danke schön! p
+Bitte, gern. p
+Ja, bitte? p
+Kein Problem p
+Schade. p
+nett p
+
+- Wo?
+an a
+auf a
+hinter a
+in a
+neben a
+über a
+unter a
+vor a
+zwischen a
+
+- Weitere wichtige Wörter
+die Frage, -n n
+der Moment, -e n
+anmachen v
+finden v
+fragen v
+helfen v
+stimmen v
+beide v
+
+-- Wie findest du Ottos Haus?
+
+- Haus/Wohnung
+das Haus, ⸚er n
+die Wohnung, -en n
+der Balkon, -e n
+der Baum, ⸚e n
+die Blume, -n n
+das Erdgeschoss, -e n
+das Fenster, - n
+die Garage, -n n
+der Garten, ⸚ n
+der Keller, - n
+das Licht, -er n
+das Licht, -er n
+die Miete, -n n
+der Müll n
+der Nachbar, -n n
+die Nachbarin, -nen n
+der Quadratmeter, - n
+die Stockwerke n
+die Treppe, -n n
+der Vermieter, -n n
+das Wasser n
+vermieten v
+gemütlich a
+leer a
+möbliert a
+
+- Zimmer
+das Arbeitszimmer, - n
+das Bad, ⸚er n
+der Flur, -e n
+das Kinderzimmer, - n
+die Küche, -n n
+das Schlafzimmer, - n
+die Toilette, -n n
+das Wohnzimmer, - n
+das Zimmer, - n
+
+- In der Natur
+der Berg, -e n
+der Fluss, ⸚e n
+das Meer, -e n
+der Wald, ⸚er n
+
+- Wo ...?
+hinten a
+oben a
+unten a
+vorn a
+
+- Weitere wichtige Wörter
+die Anzeige, -n n
+die Fabrik, -en n
+die Familie, -n n
+die Stadt, ⸚e n
+das Zelt, -e n
+aussehen v
+bezahlen v
+stehen v
+
+-- In Giesing wohnt das Leben!
+
+- In der Stadt
+die Bibliothek, -en n
+das Geschäft, -e n
+der Laden, ⸚ n
+der Hafen, ⸚ n
+die Jugendherberge, -n n
+der Kindergarten, ⸚ n
+die Kirche, -n n
+der Markt, ⸚e n
+der Park, -s n
+das Rathaus, ⸚er n
+das Schloss, ⸚er n
+der Spielplatz, ⸚e n
+der Turm, ⸚e n
+
+- Weitere wichtige Wörter
+der Ausländer, - n
+der Blick, -e n
+der Mensch, -en n
+das Reisebüro, -s n
+das Rezept, -e n
+der Urlaub n
+das Wetter n
+
+danken v
+fehlen v
+gehören v
+wichtig m
+alle m
+wenig m
+zu Hause m
+
+-- Wir haben hier ein Problem
+
+- Im Hotel
+der Aufzug, ⸚e n
+die Dusche, -n n
+der Fernseher, - n
+der Föhn, -e n
+der Gast, ⸚e n
+das Handtuch, ⸚er n
+die Heizung, -en n
+die Klimaanlage, -n n
+die Verbindung, -en n
+die Internetverbindung n
+
+- Beschwerden
+Bescheid sagen v
+Hilfe rugen v
+bringen v
+funktionieren v
+kümmern v
+reparieren v
+schicken v
+kaputt a
+sofort a
+die Lust n
+Termine absagen v
+vereinbaren v
+vereinbart v
+verschieben v
+passen v
+pünktlich a
+
+- Weitere wichtige Wörter
+die Angst, ⸚e n
+der Kurs, -e n
+das Leben n
+die Sitzung, -en n
+die Stunde, -n n
+ausmachen v
+kernenlernen v
+mitnehmen v
+tun v
+warten v
+dumm m
+kalt m
+lustig m
+seltsam m
+sicher m
+nichts m
+selbst m
+Sehr geehrte p
+Mit freundlichen p

@@ -2,6 +2,7 @@ import {
     renderCards,
     moveCardTo,
     animateCardMovement,
+    shuffleArray,
 } from "./lernkarten-utils.js";
 import { base } from "./base.js";
 
@@ -32,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(async (vocabData) => {
             const cards = [];
 
-            selectedSubthemes.forEach(({ theme, subtheme }) => {
+            shuffleArray(selectedSubthemes).forEach(({ theme, subtheme }) => {
                 const themeBlock = vocabData[theme];
                 if (!themeBlock) {
                     console.warn(`Theme not found: ${theme}`);
@@ -46,6 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
                 const categories = ["noun", "verb", "adj", "phrase", "misc"];
+                let allEntries = [];
+
                 categories.forEach((cat) => {
                     const entries = subData[cat];
                     if (!Array.isArray(entries)) return;
@@ -55,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             const article = entry.article
                                 ? entry.article + " "
                                 : "";
-                            cards.push({
+                            allEntries.push({
                                 front: article + entry.word,
                                 back: entry.russian,
                                 article: entry.article,
@@ -64,6 +67,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         }
                     });
                 });
+
+                shuffleArray(allEntries);
+                cards.push(...allEntries);
             });
 
             await renderCards(cards);
