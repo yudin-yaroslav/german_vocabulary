@@ -1742,6 +1742,21 @@
                     "russian": "соответствовать",
                     "ukrainian": "підходити",
                     "english": "fit"
+                },
+                {
+                    "word": "Hilfe rufen",
+                    "present": {
+                        "ich": "rufenhilfe",
+                        "du": "rufenhilfst",
+                        "er_sie_es": "rufenhilft",
+                        "wir": "rufenhilfen",
+                        "ihr": "rufenhilft",
+                        "sie_Sie": "rufenhilfen"
+                    },
+                    "perfekt": "gerufenhilft",
+                    "russian": "Позвонить в помощь",
+                    "ukrainian": "Зателефонуйте довідки",
+                    "english": "Call help"
                 }
             ],
             "phrase": [],
@@ -1885,6 +1900,21 @@
                     "russian": "ждать",
                     "ukrainian": "чекати",
                     "english": "wait"
+                },
+                {
+                    "word": "kennenlernen",
+                    "present": {
+                        "ich": "lerne kennen",
+                        "du": "kennenlernst",
+                        "er_sie_es": "lernt kennen",
+                        "wir": "lernen kennen",
+                        "ihr": "lernt kennen",
+                        "sie_Sie": "lernen kennen"
+                    },
+                    "perfekt": "kennengelernt",
+                    "russian": "узнать",
+                    "ukrainian": "познайомитися",
+                    "english": "get to know"
                 }
             ],
             "phrase": [
@@ -1901,7 +1931,38 @@
                     "english": "With friendly"
                 }
             ],
-            "adj": [],
+            "adj": [
+                {
+                    "word": "dumm",
+                    "russian": "тупой",
+                    "ukrainian": "німий",
+                    "english": "dumb"
+                },
+                {
+                    "word": "kalt",
+                    "russian": "холодный",
+                    "ukrainian": "холодний",
+                    "english": "cold"
+                },
+                {
+                    "word": "lustig",
+                    "russian": "забавный",
+                    "ukrainian": "смішний",
+                    "english": "funny"
+                },
+                {
+                    "word": "seltsam",
+                    "russian": "странный",
+                    "ukrainian": "дивний",
+                    "english": "strange"
+                },
+                {
+                    "word": "sicher",
+                    "russian": "безопасный",
+                    "ukrainian": "забезпечити",
+                    "english": "secure"
+                }
+            ],
             "misc": [
                 {
                     "word": "dumm",
@@ -1944,6 +2005,325 @@
                     "russian": "сам",
                     "ukrainian": "сам",
                     "english": "himself"
+                }
+            ]
+        }
+    },
+    "Wer will Popstar werden?": {
+        "Ausbildung": {
+            "noun": [
+                {
+                    "article": "die",
+                    "word": "Ausbildung",
+                    "plural": "-en",
+                    "russian": "Обучение",
+                    "ukrainian": "Навчання",
+                    "english": "Training"
+                },
+                {
+                    "article": "das",
+                    "word": "Ausland",
+                    "plural": "",
+                    "russian": "За границей",
+                    "ukrainian": "За кордоном",
+                    "english": "Abroad"
+                },
+                {
+                    "article": "die",
+                    "word": "Chance",
+                    "plural": "-n",
+                    "russian": "Шанс",
+                    "ukrainian": "Шанс",
+                    "english": "Chance"
+                },
+                {
+                    "article": "die",
+                    "word": "Fremdsprache",
+                    "plural": "-n",
+                    "russian": "Иностранный язык",
+                    "ukrainian": "Іноземна мова",
+                    "english": "Foreign language"
+                },
+                {
+                    "article": "das",
+                    "word": "Geld",
+                    "plural": "",
+                    "russian": "Деньги",
+                    "ukrainian": "Гроші",
+                    "english": "Money"
+                },
+                {
+                    "article": "der",
+                    "word": "Politiker",
+                    "plural": "-",
+                    "russian": "Политик",
+                    "ukrainian": "Політик",
+                    "english": "Politician"
+                },
+                {
+                    "article": "die",
+                    "word": "Prüfung",
+                    "plural": "-en",
+                    "russian": "Тест",
+                    "ukrainian": "Тест",
+                    "english": "Test"
+                },
+                {
+                    "article": "der",
+                    "word": "Sänger",
+                    "plural": "-",
+                    "russian": "Певец",
+                    "ukrainian": "Співачка",
+                    "english": "Singer"
+                },
+                {
+                    "article": "die",
+                    "word": "Sängerin",
+                    "plural": "-nen",
+                    "russian": "Певец",
+                    "ukrainian": "Співачка",
+                    "english": "Singer"
+                },
+                {
+                    "article": "der",
+                    "word": "Start",
+                    "plural": "-s",
+                    "russian": "Начинать",
+                    "ukrainian": "Почати",
+                    "english": "Start"
+                }
+            ],
+            "verb": [
+                {
+                    "word": "abschließen",
+                    "present": {
+                        "ich": "schlaße ab",
+                        "du": "schlaßst ab",
+                        "er_sie_es": "schlaßt ab",
+                        "wir": "schlaßen ab",
+                        "ihr": "schlaßt ab",
+                        "sie_Sie": "schlaßen ab"
+                    },
+                    "perfekt": "abgeschlasst",
+                    "russian": "полный",
+                    "ukrainian": "повне",
+                    "english": "complete"
+                },
+                {
+                    "word": "anmelden",
+                    "present": {
+                        "ich": "melde an",
+                        "du": "meldest an",
+                        "er_sie_es": "meldet an",
+                        "wir": "melden an",
+                        "ihr": "meldet an",
+                        "sie_Sie": "melden an"
+                    },
+                    "perfekt": "angemeldet",
+                    "russian": "зарегистрировать",
+                    "ukrainian": "реєстрація",
+                    "english": "register"
+                },
+                {
+                    "word": "verdienen",
+                    "present": {
+                        "ich": "verdiene",
+                        "du": "verdienst",
+                        "er_sie_es": "verdient",
+                        "wir": "verdienen",
+                        "ihr": "verdient",
+                        "sie_Sie": "verdienen"
+                    },
+                    "perfekt": "verdient",
+                    "russian": "зарабатывать",
+                    "ukrainian": "заробляти",
+                    "english": "earn"
+                },
+                {
+                    "word": "werden",
+                    "present": {
+                        "ich": "werde",
+                        "du": "wirst",
+                        "er_sie_es": "wird",
+                        "wir": "werden",
+                        "ihr": "werdet",
+                        "sie_Sie": "werden"
+                    },
+                    "perfekt": "geworden",
+                    "russian": "становиться",
+                    "ukrainian": "стати",
+                    "english": "become"
+                },
+                {
+                    "word": "wollen",
+                    "present": {
+                        "ich": "will",
+                        "du": "willst",
+                        "er_sie_es": "will",
+                        "wir": "wollen",
+                        "ihr": "wollt",
+                        "sie_Sie": "wollen"
+                    },
+                    "perfekt": "gewollt",
+                    "russian": "хотеть",
+                    "ukrainian": "бажати",
+                    "english": "want"
+                }
+            ],
+            "phrase": [],
+            "adj": [
+                {
+                    "word": "unbedingt",
+                    "russian": "абсолютно",
+                    "ukrainian": "абсолютно",
+                    "english": "absolutely"
+                },
+                {
+                    "word": "auf keinen Fall",
+                    "russian": "ни при каких обстоятельствах",
+                    "ukrainian": "ні за яких обставин",
+                    "english": "under no circumstances"
+                }
+            ],
+            "misc": []
+        },
+        "Weitere wichtige Wörter": {
+            "noun": [
+                {
+                    "article": "das",
+                    "word": "Europa",
+                    "plural": "",
+                    "russian": "Европа",
+                    "ukrainian": "Європа",
+                    "english": "Europe"
+                },
+                {
+                    "article": "der",
+                    "word": "Führerschein",
+                    "plural": "-e",
+                    "russian": "Водительское удостоверение",
+                    "ukrainian": "Посвідчення водія",
+                    "english": "Driver's license"
+                },
+                {
+                    "article": "das",
+                    "word": "Instrument",
+                    "plural": "-e",
+                    "russian": "Инструмент",
+                    "ukrainian": "Інструмент",
+                    "english": "Instrument"
+                },
+                {
+                    "article": "die",
+                    "word": "Kreditkarte",
+                    "plural": "-n",
+                    "russian": "Кредитная карта",
+                    "ukrainian": "Кредитна картка",
+                    "english": "Credit card"
+                },
+                {
+                    "article": "das",
+                    "word": "Lied",
+                    "plural": "-er",
+                    "russian": "Песня",
+                    "ukrainian": "Пісня",
+                    "english": "Song"
+                },
+                {
+                    "article": "das",
+                    "word": "Motorrad",
+                    "plural": "⸚er",
+                    "russian": "Мотоцикл",
+                    "ukrainian": "Мотоцикл",
+                    "english": "Motorcycle"
+                },
+                {
+                    "article": "die",
+                    "word": "Welt",
+                    "plural": "",
+                    "russian": "Мир",
+                    "ukrainian": "Світ",
+                    "english": "World"
+                },
+                {
+                    "article": "der",
+                    "word": "Wunsch",
+                    "plural": "⸚e",
+                    "russian": "Желание",
+                    "ukrainian": "Бажання",
+                    "english": "Wish"
+                }
+            ],
+            "verb": [
+                {
+                    "word": "heiraten",
+                    "present": {
+                        "ich": "heirate",
+                        "du": "heiratest",
+                        "er_sie_es": "heiratet",
+                        "wir": "heiraten",
+                        "ihr": "heiratet",
+                        "sie_Sie": "heiraten"
+                    },
+                    "perfekt": "geheiratet",
+                    "russian": "жениться",
+                    "ukrainian": "одружуватися",
+                    "english": "marry"
+                },
+                {
+                    "word": "laufen",
+                    "present": {
+                        "ich": "laufe",
+                        "du": "läufst",
+                        "er_sie_es": "läuft",
+                        "wir": "laufen",
+                        "ihr": "lauft",
+                        "sie_Sie": "laufen"
+                    },
+                    "perfekt": "gelaufen",
+                    "russian": "бегать",
+                    "ukrainian": "пробігати",
+                    "english": "run"
+                },
+                {
+                    "word": "reisen",
+                    "present": {
+                        "ich": "reise",
+                        "du": "reist",
+                        "er_sie_es": "reist",
+                        "wir": "reisen",
+                        "ihr": "reist",
+                        "sie_Sie": "reisen"
+                    },
+                    "perfekt": "gereist",
+                    "russian": "путешествовать",
+                    "ukrainian": "подорожувати",
+                    "english": "travel"
+                },
+                {
+                    "word": "putzen",
+                    "present": {
+                        "ich": "putze",
+                        "du": "putzt",
+                        "er_sie_es": "putzt",
+                        "wir": "putzen",
+                        "ihr": "putzt",
+                        "sie_Sie": "putzen"
+                    },
+                    "perfekt": "geputzt",
+                    "russian": "уборка",
+                    "ukrainian": "прибирання",
+                    "english": "cleaning"
+                }
+            ],
+            "phrase": [],
+            "adj": [],
+            "misc": [
+                {
+                    "word": "ohne",
+                    "russian": "без",
+                    "ukrainian": "без",
+                    "english": "without"
                 }
             ]
         }
