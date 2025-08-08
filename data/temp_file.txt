@@ -209,7 +209,7 @@ die Internetverbindung n
 
 - Beschwerden
 Bescheid sagen v
-Hilfe rugen v
+Hilfe rufen v
 bringen v
 funktionieren v
 kümmern v
@@ -232,16 +232,52 @@ das Leben n
 die Sitzung, -en n
 die Stunde, -n n
 ausmachen v
-kernenlernen v
+kennenlernen v
 mitnehmen v
 tun v
 warten v
-dumm m
-kalt m
-lustig m
-seltsam m
-sicher m
+dumm a
+kalt a
+lustig a
+seltsam a
+sicher a
 nichts m
 selbst m
 Sehr geehrte p
 Mit freundlichen p
+
+-- Wer will Popstar werden?
+
+- Ausbildung
+die Ausbildung, -en n
+das Ausland n
+die Chance, -n n
+die Fremdsprache, -n n
+das Geld n
+der Politiker, - n
+die Prüfung, -en n
+der Sänger, - n
+die Sängerin, -nen n
+der Start, -s n
+abschließen v
+anmelden v
+verdienen v
+werden v
+wollen v
+unbedingt a
+auf keinen Fall a
+
+- Weitere wichtige Wörter
+das Europa n
+der Führerschein, -e n
+das Instrument, -e n
+die Kreditkarte, -n n
+das Lied, -er n
+das Motorrad, ⸚er n
+die Welt n
+der Wunsch, ⸚e n
+heiraten v
+laufen v
+reisen v
+putzen v
+ohne m

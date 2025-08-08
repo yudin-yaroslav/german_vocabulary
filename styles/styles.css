@@ -178,6 +178,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     padding: 1rem;
 }
 
@@ -254,4 +255,116 @@ main {
 
 .hidden-article {
     display: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .header-center {
+        position: static;
+        transform: none;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 0.5rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    .pile-top,
+    .pile-bottom {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+
+    .pile {
+        width: 150px;
+        height: 200px;
+    }
+
+    .pile-btn-wrapper {
+        gap: 1rem;
+    }
+
+    .pile-btn {
+        min-width: auto;
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .main-btn-grid {
+        grid-template-columns: repeat(2, 100px);
+        grid-template-rows: auto;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .themes-btn-grid {
+        grid-template-columns: repeat(2, 100px);
+        gap: 1rem;
+    }
+
+    .subtheme-title {
+        flex: 0 0 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .pile {
+        width: 130px;
+        height: 180px;
+    }
+
+    .main-btn-grid,
+    .themes-btn-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .articles-page .pile-top,
+    .articles-page .pile-bottom {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .articles-page .pile {
+        width: 150px;
+        height: 200px;
+    }
+
+    .articles-page .pile-btn-wrapper {
+        gap: 1rem;
+    }
+
+    .articles-page .pile-btn {
+        width: 100%;
+        max-width: 200px;
+        font-size: 1.1rem;
+    }
+
+    .articles-page .empty {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .articles-page .pile {
+        width: 130px;
+        height: 180px;
+    }
+
+    .articles-page .pile-btn {
+        max-width: 180px;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
 }
